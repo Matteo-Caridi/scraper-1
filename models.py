@@ -13,3 +13,16 @@ from pydal.validators import *
 #
 # db.commit()
 #
+
+db.define_table(
+    'siti_importati',
+    Field('website_url'),
+)
+
+db.define_table(
+    'files_excel',
+    Field('reference_file', 'reference siti_importati'),
+    Field('file'),
+)
+
+db.commit()

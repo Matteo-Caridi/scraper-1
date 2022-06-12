@@ -19,3 +19,16 @@ CREATE TABLE "auth_user_tag_groups"(
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
+timestamp: 2022-06-12T18:17:59.505742
+CREATE TABLE "siti_importati"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "website_url" CHAR(512)
+);
+success!
+timestamp: 2022-06-12T18:17:59.512637
+CREATE TABLE "files_excel"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "reference_file" INTEGER REFERENCES "siti_importati" ("id") ON DELETE CASCADE  ,
+    "file" CHAR(512)
+);
+success!
