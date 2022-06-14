@@ -106,9 +106,9 @@ def index(id=None):
     return dict(form=form, rows=rows, rowsExcel=rowsExcel)
     
 # controllers definition
-@action("excel", method=["GET", "POST"])
+@action("excel")
 @action.uses('excel.html', db)
-@action.uses(auth.user)  
+#@action.uses(auth.user)  
 def excel():
     rows = db(db.siti_importati).select()
     rowsExcel = db(db.files_excel).select()
