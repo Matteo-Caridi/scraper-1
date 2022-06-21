@@ -163,3 +163,4 @@ __pycache__/models.cpython-310.pyc
 databases/storage.db
 static/excel/1655233358.537436_la_mia_lista.xlsx
 databases/storage.db
+*.pyc
