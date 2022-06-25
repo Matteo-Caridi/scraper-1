@@ -132,6 +132,7 @@ def excel():
 @action.uses('wiki.html') 
 def wiki():
     page = wikipedia.page('Web Scraping')
+    search = wikipedia.search('pizza')
     pagetitle = page.title
     page = page.content
-    return dict(pagTitle=pagetitle, pagContent=page)
+    return dict(search=search, pagTitle=pagetitle, pagContent=page)
