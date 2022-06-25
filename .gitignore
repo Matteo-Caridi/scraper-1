@@ -165,3 +165,7 @@ static/excel/1655233358.537436_la_mia_lista.xlsx
 databases/storage.db
 *.pyc
 *.pyc
+
+.__pycache__/
+__pycache__/*
+__pycache__
