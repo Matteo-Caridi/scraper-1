@@ -106,33 +106,3 @@ def index(id=None):
         redirect(URL('not_accepted'))
 
     return dict(form=form, rows=rows, rowsExcel=rowsExcel)
-
-
-# controllers definition
-@action("chisono")
-@action.uses('chisono.html') 
-def chisono():
-    descrizione = 'Hi! My name is Giuseppe Giulio, I grew up in Barge in the woods of the western Alps. The bicycle was immediately the best way to explore the world around me. My first bike was the legendary aluminum frame "Vicini" with elastomer fork. I received it as a gift from my parents for the end of the fifth grade. That day I personally went to pick it up from the closest bike shop and I rode along the secondary roads of the plain to go home. Today I am passionate about the mountains in many ways: alpinism, sport climbing, bouldering and photography. I worked in the ICT consulting for many years and now I\'m 100% \focused on outdoor activities. I try to have a lifestyle in line with the concept of "Simple living". My guiding activity is focused on tours with small groups or individuals in remote places (mainly at high altitudes). I like to help the client to achieve his goals and I use coaching techniques.'
-    return dict(descrizione=descrizione)
-
-
-# controllers definition
-@action("excel")
-@action.uses('excel.html', db)
-#@action.uses(auth.user)  
-def excel():
-    rows = db(db.siti_importati).select()
-    rowsExcel = db(db.files_excel).select()
-
-    return dict(rows=rows, rowsExcel=rowsExcel)
-    
-
-# controllers definition
-@action("wiki")
-@action.uses('wiki.html') 
-def wiki():
-    page = wikipedia.page('Web Scraping')
-    search = wikipedia.search('pizza')
-    pagetitle = page.title
-    page = page.content
-    return dict(search=search, pagTitle=pagetitle, pagContent=page)
